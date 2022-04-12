@@ -5,3 +5,4 @@ admin.site.register(Songs)
 admin.site.register(Artist)
 admin.site.register(Album)
 
+
