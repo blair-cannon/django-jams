@@ -1,12 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+from .models import *
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the song index.")
+    data = {}
+    allsongs = Songs.objects.all().values()
+    data['songs'] = list(allsongs)
+    return JsonResponse(data)
 
-# def indexartist(request):
-#     return HttpResponse("Hello, world. You're at the artist index.")
-
-# def indexalbum(request):
-#     return HttpResponse("Hello, world. You're at the album index.")
